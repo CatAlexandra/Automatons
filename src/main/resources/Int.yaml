@@ -1,0 +1,16 @@
+---
+begin_state: '1'
+---
+name: 'Int'
+priority: '2'
+translator: 'palyaeva.translator.IntTranslator'
+---
+alphabet: ['S', 'N']
+finite_state: ['3']
+states: ['1', '2', '3']
+---
+transitions: [
+      ['2', '3'],
+      ['-', '3'],
+      ['-', '3']
+    ]

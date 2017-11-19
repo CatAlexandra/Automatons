@@ -1,0 +1,14 @@
+---
+begin_state: '1'
+---
+name: 'CloseBkt'
+priority: '0'
+---
+alphabet: [')']
+finite_state: ['2']
+states: ['1', '2']
+---
+transitions: [
+      ['2'],
+      ['-']
+    ]

@@ -1,0 +1,17 @@
+---
+begin_state: '1'
+---
+name: 'Identify'
+priority: '0'
+translator: 'palyaeva.translator.IdentifyTranslator'
+---
+alphabet: ['S', '|', '?']
+finite_state: ['2', '4']
+states: ['1', '2', '3', '4']
+---
+transitions: [
+      ['2', '3', '-'],
+      ['2', '-', '-'],
+      ['-', '4', '3'],
+      ['-', '-', '-']
+    ]

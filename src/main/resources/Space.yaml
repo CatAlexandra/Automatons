@@ -1,0 +1,15 @@
+---
+begin_state: '1'
+---
+name: 'Space'
+priority: '0'
+translator: 'palyaeva.translator.SpaceTranslator'
+---
+alphabet: ['WS']
+finite_state: ['2']
+states: ['1', '2']
+---
+transitions: [
+      ['2'],
+      ['2']
+    ]
