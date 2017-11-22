@@ -2,6 +2,7 @@ package palyaeva.util;
 
 import com.esotericsoftware.yamlbeans.YamlReader;
 import palyaeva.automaton.Automaton;
+import palyaeva.automaton.DFA;
 import palyaeva.translator.Translator;
 
 import java.io.BufferedReader;
@@ -29,7 +30,7 @@ public class DataReader {
     public void read(String fileName, Automaton automaton) {
         YamlReader reader = new YamlReader(getData(fileName));
         try {
-            if (automaton.isDeterministic) {
+            if (automaton instanceof DFA) {
                 HashMap<String, String> beginState = (HashMap) reader.read();
                 automaton.beginState = beginState.get("begin_state");
             } else {
@@ -53,7 +54,7 @@ public class DataReader {
             automaton.finiteStates = data.get("finite_state");
             automaton.states = data.get("states");
 
-            if (automaton.isDeterministic) {
+            if (automaton instanceof DFA) {
                 // Map<String, Map<String, String>>
                 // Map<состояние, Map<символ алфавита, состояние перехода>>
                 Map<String, List<List<String>>> tableData = (HashMap<String, List<List<String>>>) reader.read();

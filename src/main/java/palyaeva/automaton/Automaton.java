@@ -3,7 +3,6 @@ package palyaeva.automaton;
 import palyaeva.translator.Translator;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,10 +10,11 @@ public abstract class Automaton<T> {
 
     public String name;
 
+    @Deprecated
     public boolean isDeterministic;
 
     // Map<состояние, Map<символ алфавита, состояние перехода ИЛИ список состояний>>
-    public HashMap<String, HashMap<String, T>> transitionTable;
+    public Map<String, Map<String, T>> transitionTable;
 
     public Translator translator;
 
@@ -33,6 +33,8 @@ public abstract class Automaton<T> {
     public abstract void nextState(String signal);
 
     public abstract boolean isFinite();
+
+    public abstract String run(String word);
 
     @Override
     public boolean equals(Object o) {

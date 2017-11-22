@@ -12,7 +12,7 @@ public class NFA extends Automaton<List<String>> {
     public NFA() {
         this.isDeterministic = false;
         this.currentState = beginState;
-        this.transitionTable = new HashMap<String, HashMap<String, List<String>>>();
+        this.transitionTable = new HashMap<String, Map<String, List<String>>>();
     }
 
     public void nextState(String symbol) {
@@ -30,6 +30,7 @@ public class NFA extends Automaton<List<String>> {
     // HashMap<String, HashMap<String, List<String>>> transitionTable
     // HashMap<состояние, HashMap<символ алфавита, List переходов>>
     public String run(String word) {
+        refresh();
         String letter = "";
         for (int i = 0; i < word.length(); i++) {
             letter = Character.toString(word.charAt(i));
@@ -46,10 +47,10 @@ public class NFA extends Automaton<List<String>> {
                 }
             }
             if (!isCurrent) {
-                return ("the word is NOT allowed for automaton");
+                return ("false");
             }
         }
-        return isFinite() ? "the word is allowed for automaton" : "the word is NOT allowed for automaton";
+        return isFinite() ? "true" : "false";
     }
 
     public boolean isFinite() {

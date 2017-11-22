@@ -1,10 +1,7 @@
 package palyaeva;
 
 import palyaeva.automaton.Automaton;
-import palyaeva.automaton.DFA;
-import palyaeva.task.Task3;
 import palyaeva.util.DataReader;
-import palyaeva.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +12,7 @@ public class Main {
         DataReader dataReader = new DataReader();
         List<Automaton> automatons = new ArrayList<>();
 
-        DFA integer = new DFA();
+/*        DFA integer = new DFA();
         dataReader.read("Int.yaml", integer);
         integer.refresh();
         automatons.add(integer);
@@ -43,19 +40,21 @@ public class Main {
         DFA id = new DFA();
         dataReader.read("Identify.yaml", id);
         id.refresh();
-        automatons.add(id);
+        automatons.add(id);*/
 
-        DFA real = new DFA();
+/*        DFA real = new DFA();
         dataReader.read("Real.yaml", real);
         real.refresh();
-        automatons.add(real);
+        automatons.add(real);*/
 
+        List<String> list = new ArrayList<>();
+        System.out.println(list.size());
         //System.out.println(Task3.tokenize(automatons, "test_task3.txt"));
 
-        List<Pair<String, String>> tokens = new ArrayList<>();
+/*        List<Pair<String, String>> tokens = new ArrayList<>();
         tokens = Task3.tokenize(automatons, "test_task3.txt");
         for (Pair<String, String> token : tokens) {
             System.out.println(token);
-        }
+        }*/
     }
 }
